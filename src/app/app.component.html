@@ -1,0 +1,46 @@
+<!-- <button mat-raised-button color="warn">Warn</button> -->
+<div class="header"> 
+  <h2>Ticket generation App</h2>
+</div>
+
+ <div class="main">
+  <form class="ticket-form" [formGroup]= "ticketForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+    <mat-label>Subject</mat-label>
+    <input matInput formControlName="subject">
+  </mat-form-field>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Priority</mat-label>
+    <mat-select formControlName="priority" >
+      <mat-option value="High">High</mat-option>
+      <mat-option value="Medium">Medium</mat-option>
+      <mat-option value="low">Low</mat-option>
+
+  
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput rows="5" cols="40" formControlName="description"></textarea>
+  </mat-form-field>
+  
+  <button mat-raised-button type="submit" color="primary">SUBMIT</button>
+  </form>
+ </div>
+
+
+
+<div class="card">
+
+  <p>Subject: <span style="color: rgb(5, 112, 119);">  {{subject}}</span></p> 
+ <p>Priority: <span style="color: rgb(119, 55, 3);">  {{priority}}</span> </p> 
+<p> Description: <span style="color: rgba(107, 4, 64, 0.603);">{{description}}</span></p> 
+
+</div>
+
+<!-- <div style="border: 2px solid black  ; " *ngFor="let fruit of fruits">   
+{{fruit}}
+
+
+</div> -->
